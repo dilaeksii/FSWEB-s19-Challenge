@@ -32,12 +32,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
         return httpSecurity.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> {
-                   /* auth.requestMatchers("/me/**").permitAll();
+                    auth.requestMatchers("/me/**").permitAll();
                     auth.requestMatchers("/delete/**").permitAll();
                     auth.requestMatchers("/post/**").permitAll();
                     auth.requestMatchers("/put/**").permitAll();
-                    auth.anyRequest().authenticated();*/
-                    auth.anyRequest().permitAll();
+                    auth.requestMatchers("/comment/**").permitAll();
+                    auth.anyRequest().authenticated();
+                    /*auth.anyRequest().permitAll();*/
                 })
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())

@@ -8,6 +8,7 @@ public class Sprint19ChallengeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Sprint19ChallengeApplication.class, args);
+		System.out.println("test");
 	}
 
 }

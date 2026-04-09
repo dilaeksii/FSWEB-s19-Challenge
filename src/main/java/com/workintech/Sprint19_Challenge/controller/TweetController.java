@@ -1,13 +1,10 @@
-package com.workintech.Sprint19_Challenge.config;
+package com.workintech.Sprint19_Challenge.controller;
 
 
 import com.workintech.Sprint19_Challenge.dto.TweetRequest;
 import com.workintech.Sprint19_Challenge.dto.TweetResponse;
-import com.workintech.Sprint19_Challenge.entity.Tweet;
 import com.workintech.Sprint19_Challenge.service.TweetServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
