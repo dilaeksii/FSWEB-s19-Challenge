@@ -20,7 +20,7 @@ public class Tweet {
     private Long id;
     @Column(name = "content")
     private String content;
-    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
     @OneToMany(mappedBy = "tweet", cascade = CascadeType.ALL)

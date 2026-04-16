@@ -2,6 +2,7 @@ package com.workintech.Sprint19_Challenge.controller;
 
 
 import com.workintech.Sprint19_Challenge.dto.RegisterUser;
+import com.workintech.Sprint19_Challenge.dto.UserResponse;
 import com.workintech.Sprint19_Challenge.entity.User;
 import com.workintech.Sprint19_Challenge.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,8 @@ public class AuthController {
 
 
     @PostMapping()
-    public User register(@RequestBody RegisterUser registerUser) {
-        return authService.register(registerUser.fullName(), registerUser.email(), registerUser.password());
+    public UserResponse register(@RequestBody RegisterUser registerUser) {
+        User user = authService.register(registerUser.fullName(), registerUser.email(), registerUser.password());
+        return new UserResponse(user.getFullName(), user.getEmail());
     }
 }
